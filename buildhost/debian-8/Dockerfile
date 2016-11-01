@@ -37,7 +37,7 @@ RUN wget -qO- https://github.com/oe-lite/bakery/archive/v4.2.0.tar.gz \
 
 # Add non-root user 
 RUN useradd -m -s /bin/bash user \
- && echo user ALL=NOPASSWD: ALL > /etc/sudoers.d/user
+ && echo "user ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/user
 USER user
 # VOLUME ["/home/user/manifest", "/home/user/ingredients", "/home/user/tmp"]
 ENV OE_ENV_WHITELIST="TMPDIR INGREDIENTS" \
